@@ -1,14 +1,14 @@
 import { graphqlHTTP } from 'express-graphql';
 import * as config from '../config';
 import express from 'express';
-import { schema, rootValue } from '../schema';
+import { schema } from '../schema';
 
 async function main() {
     const server = express();
     server.use('/',
             graphqlHTTP({
                 schema,
-                rootValue,
+              //  rootValue,
                 graphiql: true,
             }));
     server.listen(config.port, () => {
