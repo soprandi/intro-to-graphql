@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "title": "Cent'anni di solitudine.",
+      "author": "Gabriel García Márquez."
+    },
+    {
+      "id": 2,
+      "title": "Il Decamerone",
+      "author": "Giovanni Boccaccio"
+    },
+    {
+      "id": 3,
+      "title": "Delitto e castigo",
+      "author": "Fedor Dostoevskij"
+    },
+    {
+      "id": 4,
+      "title": "Odissea",
+      "author": "Omero"
+    },
+    {
+      "id": 5,
+      "title": "Guerra e pace",
+      "author": "Lev Tolstoj"
+    },
+    {
+      "id": 6,
+      "title": "Il ritratto di Dorian Gray",
+      "author": "Oscar Wilde"
+    },
+    {
+      "id": 7,
+      "title": "La coscienza di Zeno",
+      "author": "Italo Svevo"
+    },
+    {
+      "id": 8,
+      "title": "Alla ricerca del tempo perduto",
+      "author": "Marcel Proust"
+    },
+    {
+      "id": 9,
+      "title": "Alice nel paese delle meraviglie",
+      "author": "Lewis Carroll"
+    },
+    {
+      "id": 10,
+      "title": "I promessi sposi",
+      "author": "Alessandro Manzoni"
+    }
+  ]
