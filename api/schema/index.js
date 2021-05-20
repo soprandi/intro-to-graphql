@@ -46,7 +46,7 @@ const MutationType = new GraphQLObjectType({
     fields: () => ({
       addBook: {
         type: BookType,
-        description: 'Aggiungi un Libro al file json',
+        description: 'Aggiungi un Libro al db',
         args: {
           title: { type: GraphQLNonNull(GraphQLString)},
           author: { type: GraphQLNonNull(GraphQLString)},
