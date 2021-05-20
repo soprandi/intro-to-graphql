@@ -38,8 +38,29 @@ const QueryType = new GraphQLObjectType({
             }
         }
     }
+});
+
+const MutationType = new GraphQLObjectType({
+    name: 'Mutation',
+    description: 'Mutation',
+    fields: () => ({
+      addBook: {
+        type: BookType,
+        description: 'Aggiungi un Libro al file json',
+        args: {
+          title: { type: GraphQLNonNull(GraphQLString)},
+          author: { type: GraphQLNonNull(GraphQLString)},
+        },
+        resolve: (source, args, { dbclient }) => {
+            return dbclient.conn.many(queries.addNewBook, [args.title, args.author])
+                  .then(data => { return data[0] })
+                  .catch(err => { return 'The error is', err; });
+        }
+      }
+    })
 })
 
 export const schema = new GraphQLSchema({
-    query: QueryType
+    query: QueryType,
+    mutation: MutationType
 });
