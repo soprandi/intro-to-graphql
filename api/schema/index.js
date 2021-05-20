@@ -1,6 +1,11 @@
 import { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql';
 import { BookType } from '../model/book';
+import * as config from '../config';
 const books = require('../data/books.json')
+
+const pgp = require('pg-promise')();
+const db = {}
+db.conn = pgp(config.connectionString);
 
 const QueryType = new GraphQLObjectType({
     name: 'Query',
@@ -18,7 +23,18 @@ const QueryType = new GraphQLObjectType({
             resolve: ()=> {
                 return books;
             }
+        },
+        booksList2: {
+            type: new GraphQLList(BookType),
+            description: ".....",
+            resolve: () => {
+                const query = `SELECT * FROM example.book`;
+                return db.conn.many(query)
+                   .then(data => { return data; })
+                   .catch(err => { return 'The error is', err; });
+            }
         }
+
     }
 })
 
