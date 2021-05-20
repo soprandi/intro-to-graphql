@@ -27,9 +27,9 @@ const QueryType = new GraphQLObjectType({
         booksList2: {
             type: new GraphQLList(BookType),
             description: ".....",
-            resolve: () => {
+            resolve: (source, args, { dbclient }) => {
                 const query = `SELECT * FROM example.book`;
-                return db.conn.many(query)
+                return dbclient.conn.many(query)
                    .then(data => { return data; })
                    .catch(err => { return 'The error is', err; });
             }
