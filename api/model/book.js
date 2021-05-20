@@ -11,7 +11,7 @@ export const BookType = new GraphQLObjectType({
         author: { type: GraphQLNonNull( GraphQLString)},
         price: {
             type: new GraphQLNonNull( PriceType ),
-            resolve: (soruce, args, { dbclient }) => {
+            resolve: (source, args, { dbclient }) => {
                 return dbclient.conn.many(queries.priceFromBookId, [source.id])
                     .then(data => { return data[0];})
                     .catch(err =>  { return 'errore', err})
