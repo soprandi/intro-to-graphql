@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/soprandi/intro-to-graphql#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "esm": "^3.2.25",
     "express": "^4.17.1",
