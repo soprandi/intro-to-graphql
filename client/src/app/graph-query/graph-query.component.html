@@ -1,0 +1,11 @@
+<div *ngIf="loading">
+    Loading...
+  </div>
+  <div *ngIf="error">
+    Error :(
+  </div>
+  <div *ngIf="items">
+    <div *ngFor="let item of items">
+      <p>{{ item.id }} - {{ item.title }} - {{ item.author }} - {{ item.price.value }} </p>
+    </div>
+  </div>
